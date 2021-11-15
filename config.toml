@@ -1,3 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://crane.konveyor.io/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Crane Documentation'
+theme = 'hugo-theme-learn'
