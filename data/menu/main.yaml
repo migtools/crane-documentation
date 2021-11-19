@@ -1,0 +1,28 @@
+---
+main:
+  - name: Getting Started
+    sub: 
+      - name: Overview
+        ref: "/"
+      - name: Installation Guide
+        ref: "content/Getting Started/installation"
+
+  - name: Usage
+    ref: "content/Usage/overview"
+    sub:
+      - name: Export
+        ref: "content/Usage/export"
+      - name: Plugin-manager
+        ref: "content/Usage/plugin management"
+      - name: Transform
+        ref: "content/Usage/transform"
+      - name: Apply
+        ref: "content/Usage/apply"
+        
+  - name: Advance Usage
+    sub:
+      - name: How to write custom plugins
+        ref: "content/Advance Usage/custom plugins"
+      - name: GitOps Integration
+        ref: "content/Advance Usage/gitops"
+
