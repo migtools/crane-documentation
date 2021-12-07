@@ -19,6 +19,21 @@ Currently only three architectures are supported which are
 - amd64-darwin
 - arm64-darwin
 
+For Example: 
+- To download latest version of crane for amd64-linux, run the following command
+    ```
+    curl -sL https://api.github.com/repos/konveyor/crane/releases/latest | jq -r ".assets[] | select(.name | contains(\"amd64-linux\")) | .browser_download_url" | wget -i-
+    ```
+- To download latest version of crane for amd64-darwin, run the following command
+
+    ```
+    curl -sL https://api.github.com/repos/konveyor/crane/releases/latest | jq -r ".assets[] | select(.name | contains(\"amd64-darwin\")) | .browser_download_url" | wget -i-
+    ```
+- To download latest version of crane for arm64-darwin, run the following command
+    ```
+    curl -sL https://api.github.com/repos/konveyor/crane/releases/latest | jq -r ".assets[] | select(.name | contains(\"arm64-darwin\")) | .browser_download_url" | wget -i-
+
+    ```
 ### Install most recent crane from upstream main branch
 
 `GOPATH` should be configured to build the project.
