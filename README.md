@@ -24,7 +24,7 @@ To start the Hugo server, run the command:
 `hugo server`
 
 ## Adding a Page to the Navigation
-The navigation menu is located at `data/menu/main.yml`.
+The navigation menu is located at `data/menu/main.yaml`.
 To add an additional page, enter a chosen name under the appropriate 
 section, and the link to that page. 
 
