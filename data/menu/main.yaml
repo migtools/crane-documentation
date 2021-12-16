@@ -18,7 +18,9 @@ main:
         ref: "content/Usage/transform"
       - name: Apply
         ref: "content/Usage/apply"
-        
+      - name: Tunnel API
+        ref: "content/Usage/tunnel-api.md"
+
   - name: Advance Usage
     sub:
       - name: How to write custom plugins
