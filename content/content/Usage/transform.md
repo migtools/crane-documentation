@@ -21,10 +21,10 @@ Think of the transform command as a function that accepts the set of exported re
 #### Example
 
 ```
-crane transform -e export -p plugins -t transform --optional-flags="add-annotations:transform-test: test"
+crane transform -e export -p plugins -t transform --optional-flags="add-annotations=transform-test:test"
 ```
 
-The above command generate a patch to add an annotation `transform-test: test` for objects in `export` directory and places the same in `transform` directory to be used as input for `apply` command.
+The above command generate a patch to add an annotation `transform-test:test` for objects in `export` directory and places the same in `transform` directory to be used as input for `apply` command.
 
 To see the list of available optional command for configured plugins, run the following command -
 
