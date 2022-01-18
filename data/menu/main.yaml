@@ -7,6 +7,11 @@ main:
       - name: Installation Guide
         ref: "content/Getting Started/installation"
 
+  - name: Examples
+    sub:
+      - name: Stateless Application Mirror
+        ref: "content/Examples/stateless-app-mirror"
+
   - name: Usage
     ref: "content/Usage/overview"
     sub:
@@ -21,7 +26,7 @@ main:
       - name: Tunnel API
         ref: "content/Usage/tunnel-api.md"
 
-  - name: Advance Usage
+  - name: Advanced Usage
     sub:
       - name: How to write custom plugins
         ref: "content/Advance Usage/custom plugins"
