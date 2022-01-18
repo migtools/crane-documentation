@@ -47,7 +47,7 @@ will need modify the commands below to reference the correct cluster context.
 
 You will be deploying
 [Kubernetes' stateless guestbook application](https://kubernetes.io/docs/tutorials/stateless-application/guestbook/)
-modified here to be consumable via kustomize.
+modified here to be consumable via [Kustomize](https://kustomize.io/).
 The guestbook application consisists of:
 
 * redis leader deployment and service
@@ -57,7 +57,7 @@ The guestbook application consisists of:
 
 ```bash
 kubectl --context src create namespace guestbook
-kustomize build github.com/konveyor/crane-runner/examples/resources/guestbook | kubectl --context src --namespace guestbook apply -f -
+kubectl --context src --namespace guestbook apply -k github.com/konveyor/crane-runner/examples/resources/guestbook
 kubectl --context src --namespace guestbook wait --for=condition=ready pod --selector=app=guestbook --timeout=180s
 ```
 
@@ -252,14 +252,16 @@ kubectl --context dest --namespace guestbook --recursive=true apply -f ./output
 
 **NOTE**
 
-If you wanted to change the namespace, you could use something like Kustomize:
+If you wanted to change the namespace, you could use something like
+[Kustomize](https://kustomize.io/), the Kubernetes native + template-free way
+to manage application configuration. For example:
 
 ```bash
 cd apply/resources/guestbook
 kustomize init --namespace custom-guestbook --autodetect
 ```
 
-You would end up with a `kustomization.yaml` that looks like:
+Would give you a `kustomization.yaml` that looks like:
 
 ```yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
