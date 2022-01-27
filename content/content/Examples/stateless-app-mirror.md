@@ -23,13 +23,17 @@ You will need a "source" and "destination" Kubernetes cluster. You can create an
 environment in minikube with:
 
 ```bash
-bash <(curl -s "https://raw.githubusercontent.com/konveyor/crane/main/hack/minikube-clusters-start.sh")
+wget "https://raw.githubusercontent.com/konveyor/crane/main/hack/minikube-clusters-start.sh"
+chmod +x minikube-clusters-start.sh
+./minikube-clusters-start.sh
 ```
 
 or kind with:
 
 ```bash
-bash <(curl -s "https://raw.githubusercontent.com/konveyor/crane-runner/main/hack/kind-up.sh")
+wget "https://raw.githubusercontent.com/konveyor/crane-runner/main/hack/kind-up.sh"
+chmod +x kind-up.sh
+./kind-up.sh
 ```
 
 You will also need to install `crane`. See the [Installation Guide]({{<ref "/content/Getting Started/installation" >}}).
