@@ -261,7 +261,7 @@ If you wanted to change the namespace, you could use something like
 to manage application configuration. For example:
 
 ```bash
-cd apply/resources/guestbook
+cd output/resources/guestbook
 kustomize init --namespace custom-guestbook --autodetect
 ```
 
