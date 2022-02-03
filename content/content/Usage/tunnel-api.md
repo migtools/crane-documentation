@@ -23,6 +23,8 @@ A service created on the cloud cluster is used to expose the on-premise clusters
 - namespace: The namespace to launch the VPN tunnel in, defaults to `openvpn`
 - destination-context: The cloud destination cluster context where the openvpn server will be launched. 
 - source-context: The on-premise source cluster context where the openvpn client will be launched.
+- source-image: The container image to use on the source cluster. Defaults to quay.io/konveyor/openvpn:latest
+- destination-image: The container image to use on the destination cluster. Defaults to quay.io/konveyor/openvpn:latest
 
 ### Example
 
@@ -30,6 +32,16 @@ A service created on the cloud cluster is used to expose the on-premise clusters
 crane tunnel-api --namespace openvpn-311 \
       --destination-context openshift-migration/c131-e-us-east-containers-cloud-ibm-com/admin \
       --source-context default/192-168-122-171-nip-io:8443/admin
+```
+
+### Specify an Alternate Image
+If you need to specify a different image to use on one or both clusters, for instance because you need to mirror it to a local registry, you may do so.
+
+```
+crane tunnel-api --namespace openvpn-311 \
+      --destination-context openshift-migration/c131-e-us-east-containers-cloud-ibm-com/admin \
+      --source-context default/192-168-122-171-nip-io:8443/admin \
+      --source-image: my.on.prem.registry/konveyor/openvpn:latest
 ```
 
 ## MTC Configuration
