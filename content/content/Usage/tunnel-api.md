@@ -22,14 +22,26 @@ A service created on the cloud cluster is used to expose the on-premise clusters
 
 - namespace: The namespace to launch the VPN tunnel in, defaults to `openvpn`
 - destination-context: The cloud destination cluster context where the openvpn server will be launched. 
+- destination-image: The container image to use on the destination cluster. Defaults to quay.io/konveyor/openvpn:latest
 - source-context: The on-premise source cluster context where the openvpn client will be launched.
+- source-image: The container image to use on the source cluster. Defaults to quay.io/konveyor/openvpn:latest
+- proxy-host: The hostname of an http-proxy to use on the source cluster for connecting to the destination cluster
+- proxy-pass: The password for the http-proxy. If specified you must also specify a username or it will be ignored.
+- proxy-port: The port the http-proxy is listening on. If no specified it will default to 3128
+- proxy-user: The username for the http-proxy. If specified you must also specify a password or it will be ignored.
+
 
 ### Example
 
 ```
 crane tunnel-api --namespace openvpn-311 \
       --destination-context openshift-migration/c131-e-us-east-containers-cloud-ibm-com/admin \
-      --source-context default/192-168-122-171-nip-io:8443/admin
+      --source-context default/192-168-122-171-nip-io:8443/admin \
+      --source-image: my.registry.server:5000/konveyor/openvpn:latest \
+      --proxy-host my.proxy.server \
+      --proxy-port 3128 \
+      --proxy-user foo \
+      --proxy-pass bar
 ```
 
 ## MTC Configuration
