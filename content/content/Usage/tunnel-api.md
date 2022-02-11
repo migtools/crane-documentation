@@ -45,8 +45,10 @@ crane tunnel-api --namespace openvpn-311 \
 ```
 
 ## MTC Configuration
-When configuring the source cluster in MTC the API URL takes the form of `https://proxied-cluster.${namespace}.svc.cluster.local`. 
-
+When configuring the source cluster in MTC the API URL takes the form of `https://proxied-cluster.${namespace}.svc.cluster.local:8443`.  
+  
+You may also set the image registry for direct image migrations to `proxied-cluster.${namespace}.svc.cluster.local:5000`.  
+  
 Replace `${namespace}` with either `openvpn` or the namespace you specified when running the command to set up the tunnel.
 
 ## Demo
