@@ -1,4 +1,4 @@
-baseURL = 'https://crane.konveyor.io/'
+baseURL = 'https://crane-docs.konveyor.io/'
 languageCode = 'en-us'
 title = 'Crane Documentation'
 theme = "hugo-geekdoc"
