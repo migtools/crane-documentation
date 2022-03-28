@@ -10,7 +10,7 @@ draft: false
 curl -sL https://api.github.com/repos/konveyor/crane/releases/latest | 
 jq -r ".assets[] | select(.name | contains(\"<arch>-<os>\")) | .browser_download_url" | wget -i-
 chmod +x <binary>
-cp <binary> /bin/usr/crane
+cp <binary> /usr/bin/crane
 ```
 
 Currently only three architectures are supported which are 
@@ -49,7 +49,7 @@ cd $GOPATH
 git clone https://github.com/konveyor/crane.git
 cd crane
 go build -o crane main.go
-cp crane /bin/usr/crane
+cp crane /usr/bin/crane
 ```
 
 <b>Note:</b> It is recommended to install the released version instead of building from upstream main
