@@ -25,6 +25,8 @@ main:
         ref: "content/Usage/apply"
       - name: Tunnel API
         ref: "content/Usage/tunnel-api.md"
+      - name: Transfer Persistent Volume Claims
+        ref: "content/Usage/transfer-persistent-volume-claims.md"
 
   - name: Advanced Usage
     sub:
