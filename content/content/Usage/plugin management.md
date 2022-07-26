@@ -25,7 +25,7 @@ Listing from the repo default
 
 #### Other valid execution examples
 ```
-crane plugin-manager --installed -p plugin-dir
+crane plugin-manager list --installed
 ```
 
 The above command lists all the installed plugins managed by plugin-manager.
@@ -43,10 +43,26 @@ Add any plugin to a plugin directory to be consumed by transform command.
 #### Example
 
 ```
-crane plugin-manager add foo --version 0.0.1 -p plugin-dir
+crane plugin-manager add foo --version 0.0.1
 ```
 
-The above command downloads the binary of plugin `foo` versioned `0.0.1` from appropriate source and places it in plugin directory `plugin-dir/managed` (default is `plugins`).
+The above command downloads the binary of plugin `foo` versioned `0.0.1` from appropriate source and by default places it in plugin directory `~/.local/share/crane/plugins`
+
+A directory to install the plugin can optionally be specified:
+```
+sudo crane plugin-manager add OpenShiftPlugin -p /usr/local/share/crane/plugins
+```
+
+### Plugin loading behavior
+Crane looks for plugins in four directories. The order of precedence is:
+1. `./plugins`
+1. `~/.local/share/crane/plugins` - This can be overriden with the -p option when running a transform.
+1. `/usr/local/share/crane/plugins`
+1. `/usr/share/crane/plugins`
+
+This means plugins installed from a package in `/usr/share/crane/plugins` can be overridden by an global unpackaged install in `/usr/local/share/crane/plugins`, which can in turn be overridden by a user using the default install path in their home directory.
+
+The relative path plugins directory is primarily intended for containerized installs running in WORKINGDIR, where the runtime user, home directory, and other aspects cannot be guaranteed.
 
 ### Remove plugin utility
 
