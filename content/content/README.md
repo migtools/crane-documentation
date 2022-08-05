@@ -1,1 +1,1 @@
-> **Warning:** Crane documentation has been moved to the [new official Konveyor documentation website](https://konveyor.github.io/) and [GitHub Repo](https://github.com/konveyor/konveyor.github.io/tree/main).
+> **Warning** Crane documentation has been moved to the [new official Konveyor documentation website](https://konveyor.github.io/) and [GitHub Repo](https://github.com/konveyor/konveyor.github.io/tree/main).
